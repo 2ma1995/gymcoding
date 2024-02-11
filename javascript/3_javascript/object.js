@@ -68,23 +68,23 @@
 // console.log(b);
 
 //팩토리함수
-function printPerson({ hobby, name, age }) {
-  console.log(
-    `제이름은 ${name}이며, 나이는${age}살 입니다. 그리고 취미는 ${hobby}입니다`
-  );
-}
-function createPerson(name, age, hobby) {
-  return {
-    name: name,
-    age: age,
-    hobby: hobby,
-    //es6문법은 변수명과 키값이 동일한경우 한번만 적어도 된다
-    // ex)
-    // name,
-    // age,
-    // hobby
-  };
-}
+// function printPerson({ hobby, name, age }) {
+//   console.log(
+//     `제이름은 ${name}이며, 나이는${age}살 입니다. 그리고 취미는 ${hobby}입니다`
+//   );
+// }
+// function createPerson(name, age, hobby) {
+//   return {
+//     name: name,
+//     age: age,
+//     hobby: hobby,
+// es6문법은 변수명과 키값이 동일한경우 한번만 적어도 된다
+// ex)
+// name,
+// age,
+// hobby
+//   };
+// }
 // //es5
 // function Person(name, age, hobby) {
 //   this.name = name;
@@ -107,3 +107,72 @@ function createPerson(name, age, hobby) {
 // printPerson(person2);
 // printPerson(person3);
 // printPerson(person4);
+
+// call by value => 같은 값이 복사가 되어 하나가 값이 더 생기는것
+// let username = `짐코딩`;
+// console.log(username);
+// changeName(username);
+// console.log(username);
+
+// function changeName(name) {
+//   name = `홍길동`;
+//   console.log(name);
+// }
+// console.log(`=============`);
+
+// // call by 레퍼런스 => 같은주소의 값이 변경이 되는것
+
+// let person = {
+//   name: `짐코딩`,
+//   age: 25,
+// };
+
+// console.log(person);
+// changePersonName(person);
+// console.log(person);
+
+// function changePersonName(person) {
+//   person.name = `goblin`;
+//   person.age = 50;
+// }
+
+//객체복사
+// let person1 = {
+//   name: `짐코딩`,
+//   age: 26,
+// };
+// let person2 = person1;
+// person2.name = `홍길동`;
+// console.log(person1);
+// console.log(person2);
+//위와 같은 방식으로 하면 전체적인 내용이 다바뀐다
+// const를 사용해도 선언했던 객체안에 내용을 변경가능하다(할당된 주소 안에 내용임으로 변경이 가능한것, 새로운 값을 넣는건 불가능하다.)
+
+// 전개구문을 활용한 복사
+// let person2 = { ...person1 };
+// person2.name = `홍길동`;
+// console.log(person1);
+// console.log(person2);
+
+// object.assign()을 활용한복사
+// let person2 = Object.assign({}, person1);
+// person2.name = `홍길동`;
+// console.log(person1);
+// console.log(person2);
+
+//키 존재 여부확인
+// if (`name` in person1) {
+//   console.log(`존재합니다.`);
+// } else {
+//   `존재하지않습니다.`;
+// }
+
+const person = {
+  name: `짐코딩`,
+};
+console.log(person.hasOwnProperty(`name`));
+console.log(Object.hasOwn(person, `name`));
+
+if (person.name) {
+  console.log(`true~~~`);
+}
