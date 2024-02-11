@@ -40,3 +40,92 @@ body {
   padding-left: 15px;
   transition: all 0.3s ease;
 }
+.input-field input:focus {
+  border-color: #ff6d70;
+}
+.input-field button {
+  width: 50px;
+  height: 100%;
+  border: none;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 21px;
+  outline: none;
+  background-color: #ff7a7c;
+  cursor: pointer;
+  border-radius: 3px;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.input-field button:hover,
+.card__footer button:hover {
+  background: #ff0004;
+}
+
+.input-field button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card .todo-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.todo-list li {
+  position: relative;
+  list-style: none;
+  margin-bottom: 8px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  padding: 10px 15px;
+  cursor: default;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+.todo-list li .icon {
+  position: absolute;
+  right: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #e74c3c;
+  width: 45px;
+  text-align: center;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.todo-list li:hover .icon {
+  right: 0px;
+}
+.card .card__footer {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__footer button {
+  padding: 6px 10px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  margin-left: 5px;
+  background: #ff6d70;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.6;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.card__footer button.active {
+  opacity: 1;
+  pointer-events: auto;
+}
